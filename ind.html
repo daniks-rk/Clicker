@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Site</title>
+    <style>
+        body{
+            --background-image: image-set("52.jpg");
+            background-repeat: no-repeat;
+            background-size: 100%;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+             }
+        #cl{
+            background-color: crimson;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            size: 10px;
+        }
+        #buy{
+            background-color: aqua;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+        }
+    </style>
+</head>
+<body>
+    <h1>кликер</h1>
+    <button id = 'cl'>клик</button>
+    <button id = 'buy'>+1 (1)</button>
+    
+    <script>
+        let u = document.querySelector('#cl');
+        let x = 1;
+        let a = x;
+        let y = 20;
+        u.addEventListener("click",function()   {
+            a = a+x;
+            u.textContent= String (a+' '+'('+x+')');
+        })
+        let uu = document.querySelector('#buy');
+        uu.textContent = ("+1" + ' (' + String(y) + ')');
+        uu.addEventListener("click", function() {
+            if (a>=y) {
+                a = a-y;
+                u.textContent= String (a);
+                x = x + 1;
+                y = Math.round(y * 1.2);
+                uu.textContent = ("+1" + ' (' + String(y) + ')');
+            }
+        })
+
+    </script>
+</body>
+</html>
